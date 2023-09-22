@@ -1,5 +1,5 @@
 <template>
-    <h2>Questa è una lezione</h2>
+    <h2>Questa è una lezione e sono riuscito a metterla dentro git</h2>
     <p class="uppercase"> Lesson {{ chapter.number }} - {{ lesson.number }}</p>
     <!-- <p>Capitolo:  {{ $route.params.chapterSlug }}</p> -->
     <!-- <p>Lezione:  {{ $route.params.lessonSlug }}</p> -->
