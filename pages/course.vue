@@ -1,5 +1,6 @@
 <template>
     <p>Questa è una pagina allo stesso livello di index, per poterla vedere, inserire /nome-pagina nell'url quando sei nella pagina index</p>
+    <p><strong>Direi che è andata bene?</strong></p>
     <p>Nuxt genera direttamente la route guaredando la cartella pages</p>
     <p>NB il componente che fa partire il tutto è il file app.vue</p>
     <div class="bg-slate-300 flex justify-between h-[80vh]">
