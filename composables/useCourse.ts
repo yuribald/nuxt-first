@@ -1,5 +1,12 @@
 import courseData from './courseData'
 
+
+// SIMPLE
+// export const useCourse = () => {
+//   return courseData;
+// };
+
+// TO MAP THE SLUG FOR INTERNAL LINKS
 export const useCourse = () => {
   // return courseData;
   // usiamo map

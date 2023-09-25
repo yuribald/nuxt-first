@@ -3,7 +3,7 @@
     <p><strong>Direi che è andata bene?</strong></p>
     <p>Nuxt genera direttamente la route guaredando la cartella pages</p>
     <p>NB il componente che fa partire il tutto è il file app.vue</p>
-    <div class="bg-slate-300 flex justify-between h-[80vh]">
+    <div class="bg-slate-500 flex justify-between h-[80vh]">
         <div class="w-full max-w-xs bg-red-300 h-full">
             <h2>Capitoli</h2>
             <div class="mb-4 flex flex-col"
@@ -45,6 +45,16 @@
 
 <script setup>
 const { chapters } = useCourse();
+
+
+// per un custom layout che deve essere inserito solo in questa pagina, si può fare come scritto qua sotto, o inserito direttamente dentro il tag NuxtLayout
+// questo si può evitare di mettere, se andiamo a lavorare sul tag NuxtLayout
+// definePageMeta({
+//     // layout: false,
+//     layout: 'custom',
+// });
+
+
 </script>
 
 
