@@ -13,15 +13,24 @@
     <VideoPlayer v-if="lesson.videoId" :videoId="lesson.videoId" />
     <!-- <ClientOnly> -->
         <!-- per avere lo stesso effetto ClientOnly su questo componente, basta mettere .client nel nome del componente -->
-        <LessonCompleteButton :model-value="isLessonComplete" @update:model-value="toggleComplete" />
+        <!-- <LessonCompleteButton :model-value="isLessonComplete" @update:model-value="toggleComplete" /> -->
+        <!-- bottone che lancia un errore, createError lavora client side -->
+        <LessonCompleteButton :model-value="isLessonComplete" @update:model-value="
+        throw createError('Could not update');
+        " />
     <!-- </ClientOnly> -->
     
 </template>
 
 <script setup>
 const course = useCourse();
-console.log(course);
+// console.log(course);
 const route = useRoute();
+
+// simulate error about open third lesson
+if (route.params.lessonSlug === '3-typing-component-events') {
+    console.log(route.params.paramthatdoesnotexistwhoops.capitalizaIsNotAMethod());
+}
 
 const chapter = computed(() => {
     return course.chapters.find(

@@ -37,7 +37,13 @@
             
             <div class="lesson-page-wrapper bg-emerald-500">
                 <!-- qui va a prendersi le pagine (file) ch stanno dentro la cartella course -->
-                <NuxtPage />
+                <NuxtErrorBoundary>
+                    <NuxtPage />
+                    <template #error="{ error }">
+                        <p>oh no, something broke! <code>{{ error }}</code></p>
+                        <p><button class="hover:cursor-pointer bg-gray-500 text-white" @click="resetError(error)">Reset</button></p>
+                    </template>
+                </NuxtErrorBoundary>
             </div>
         </div>
     </div>
@@ -54,6 +60,18 @@ const { chapters } = useCourse();
 //     layout: 'custom',
 // });
 
+const resetError = async (error) => {
+    // await navigateTo(
+    //     '/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3'
+    // );
+    // error.value = null;
+
+    // throw a fatal error
+    throw createError({
+        fatal: true,
+        message: 'Fatal error',
+    });
+};
 
 </script>
 
